@@ -24,7 +24,7 @@ function note() {
 
     function chon() {
         let Select = prompt('Mời bạn nhập lựa chọn : ');
-    let select = toString(Select);
+    let select = Number(Select);
     
     try {
         if (select != 1 || select != 2 || select != 3 || select != 4 || select != 5 )
@@ -32,16 +32,15 @@ function note() {
     }
     catch(err) {
         console.log(err);
-        return chon();
     }
     }
 
 
     let Select = prompt('Mời bạn nhập lựa chọn : ');
-    let select = toString(Select);
+    let select = Number(Select);
     
     try {
-        if (select != 1 || select != 2 || select != 3 || select != 4 || select != 5 )
+        if (select !== 1 || select !== 2 || select !== 3 || select !== 4 || select !== 5 )
         throw 'Lựa chọn phải là số từ 1-5 ';
     }
     catch(err) {
@@ -52,7 +51,7 @@ function note() {
 while (select < 1 || select > 5)
     
 
-if (select == 1)
+if (select === 1)
     {
         console.log('Bạn vừa chọn tạo mới một ghi chú !')
         let tieuDe = prompt('Tiêu Đề : ');
@@ -68,7 +67,7 @@ if (select == 1)
     }
 
 
-    else if(select == 2)
+    else if(select === 2)
     {
         console.log('Bạn vừa chọn xem các ghi chú !')
         fs.readdirSync(tepghichu).forEach(file => {
@@ -84,7 +83,7 @@ if (select == 1)
     }
 
 
-    else if(select == 3)
+    else if(select === 3)
     {
         console.log('Bạn vừa chọn xóa ghi chú !')
         let tieuDe = prompt('Nhập phần tiêu đề của ghi chú bạn muốn xóa : ')
@@ -102,36 +101,38 @@ if (select == 1)
     }
 
 
-    else if(select == 4)
+    else if(select === 4)
     {
         let tieude = prompt('Nhập đúng tiêu đề bạn muốn sửa. Nếu nhập sai sẽ tạo ghi chú với tiêu đề vừa nhập : ')
         console.log('Bạn đã chọn cập nhập ghi chú ');
         console.log('1 . Cập nhập mới toàn bộ nội dung của ghi chú !');
         console.log('2 . Thêm nối tiếp nội dung vào ghi chú !');
+
+
+        //Xử lý người dùng nhập không đúng
         function chon1() 
         {
         let luaChon = prompt('Nhập lựa chọn của bạn : ');
-        let luachon = toString(luaChon);
+        let luachon = Number(luaChon);
         try {
-            if(luachon != 1 || luachon != 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !== 1 || luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
-            return chon1();
         }
         }
 
 
         let luaChon = prompt('Nhập lựa chọn của bạn : ');
-        let luachon = toString(luaChon);
+        let luachon = Number(luaChon);
         try {
-            if(luachon != 1 || luachon != 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !== 1 || luachon != 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
             return chon1();
         }
-        if(luachon == 1) {
+        if(luachon === 1) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -140,7 +141,7 @@ if (select == 1)
         console.log(data.toString());
             console.log('Sửa thành công !');
         }
-        else if(luachon == 2) {
+        else if(luachon === 2) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -166,7 +167,7 @@ if (select == 1)
 
 
 
-    do
+do
 {
     console.log('1 . Tạo ghi chú mới ')
     console.log('2 . Xem các ghi chú ')
@@ -182,7 +183,7 @@ if (select == 1)
 
     function chon() {
         let Select = prompt('Mời bạn nhập lựa chọn : ');
-    let select = toString(Select);
+    let select = Number(Select);
     
     try {
         if (select != 1 || select != 2 || select != 3 || select != 4 || select != 5 )
@@ -190,16 +191,15 @@ if (select == 1)
     }
     catch(err) {
         console.log(err);
-        return chon();
     }
     }
 
 
     let Select = prompt('Mời bạn nhập lựa chọn : ');
-    let select = toString(Select);
+    let select = Number(Select);
     
     try {
-        if (select != 1 || select != 2 || select != 3 || select != 4 || select != 5 )
+        if (select !== 1 || select !== 2 || select !== 3 || select !== 4 || select !== 5 )
         throw 'Lựa chọn phải là số từ 1-5 ';
     }
     catch(err) {
@@ -210,7 +210,7 @@ if (select == 1)
 while (select < 1 || select > 5)
     
 
-if (select == 1)
+if (select === 1)
     {
         console.log('Bạn vừa chọn tạo mới một ghi chú !')
         let tieuDe = prompt('Tiêu Đề : ');
@@ -226,7 +226,7 @@ if (select == 1)
     }
 
 
-    else if(select == 2)
+    else if(select === 2)
     {
         console.log('Bạn vừa chọn xem các ghi chú !')
         fs.readdirSync(tepghichu).forEach(file => {
@@ -242,7 +242,7 @@ if (select == 1)
     }
 
 
-    else if(select == 3)
+    else if(select === 3)
     {
         console.log('Bạn vừa chọn xóa ghi chú !')
         let tieuDe = prompt('Nhập phần tiêu đề của ghi chú bạn muốn xóa : ')
@@ -260,36 +260,38 @@ if (select == 1)
     }
 
 
-    else if(select == 4)
+    else if(select === 4)
     {
         let tieude = prompt('Nhập đúng tiêu đề bạn muốn sửa. Nếu nhập sai sẽ tạo ghi chú với tiêu đề vừa nhập : ')
         console.log('Bạn đã chọn cập nhập ghi chú ');
         console.log('1 . Cập nhập mới toàn bộ nội dung của ghi chú !');
         console.log('2 . Thêm nối tiếp nội dung vào ghi chú !');
+
+
+        //Xử lý người dùng nhập không đúng
         function chon1() 
         {
         let luaChon = prompt('Nhập lựa chọn của bạn : ');
-        let luachon = toString(luaChon);
+        let luachon = Number(luaChon);
         try {
-            if(luachon != 1 || luachon != 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !== 1 || luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
-            return chon1();
         }
         }
 
 
         let luaChon = prompt('Nhập lựa chọn của bạn : ');
-        let luachon = toString(luaChon);
+        let luachon = Number(luaChon);
         try {
-            if(luachon != 1 || luachon != 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !== 1 || luachon != 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
             return chon1();
         }
-        if(luachon == 1) {
+        if(luachon === 1) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -298,7 +300,7 @@ if (select == 1)
         console.log(data.toString());
             console.log('Sửa thành công !');
         }
-        else if(luachon == 2) {
+        else if(luachon === 2) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -317,6 +319,3 @@ if (select == 1)
             return console.log(`Bạn đã thoát chương trình thành công ! `);
         });
     }
-
-
-

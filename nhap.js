@@ -8,28 +8,36 @@ var prompt = require('prompt-sync')({
 
 function chon() {
     let select = prompt('nhap lua chọn : ')
-    let Select = toString(select);
+    let Select = Number(select);
     try {
-        if (Select != 1 || Select != 2 || Select != 3 || Select != 4 || Select != 5)
+        if (Select < 1)
         throw 'sai roi';
+        if (Select > 2)
+        throw 'sai rồi ';
+        if (isString(Select) === true)
+        throw 'sai rồi';
     } catch (err) {
         console.log(err);
-        return chon();
     }
 }
 
 let select = prompt('nhap lua chọn : ')
-    let Select = toString(select);
+    let Select = Number(select);
     try {
-        if (Select != '1' || Select != '2' || Select != '3' || Select != '4' || Select != '5')
+        if (Select < 1)
         throw 'sai roi';
+        if (Select > 2)
+        throw 'sai rồi ';
+        if (isString(Select) === true)
+        throw 'sai rồi';
     } catch (err) {
         console.log(err);
         return chon();
     }
-    if(Select == '1') {
+    if(Select === 1) {
         console.log('dung rồi');
     }
-    else if(Select == '2') {
+    else if(Select === 2) {
         console.log('đúng rồi ');
     }
+    
