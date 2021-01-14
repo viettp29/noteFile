@@ -117,30 +117,30 @@ function note() {
         //Xử lý người dùng nhập không đúng
         function chon1()
         {
-        let luachon = prompt('Nhập lựa chọn của bạn : ');
-        
+        let luaChon = prompt('Nhập lựa chọn của bạn : ');
+        let luachon = Number(luaChon);
         try {
-            if(luachon !== '1' && luachon !== '2') throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !== 1 && luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
         }
-        if(luachon === '1') {
+        if(luachon === 1) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
 
             const data = fs.readFileSync(`tepghichu/${tieude}.txt`);
-        console.log(data.toString());
+        console.log(data);
             console.log('Sửa thành công !');
         }
-        else if(luachon === '2') {
+        else if(luachon === 2) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
 
             const data = fs.readFileSync(`tepghichu/${tieude}.txt`);
-        console.log(data.toString());
+        console.log(data);
             console.log('Sửa thành công !');
         }
         return note();
@@ -148,15 +148,15 @@ function note() {
 
 
         let luaChon = prompt('Nhập lựa chọn của bạn : ');
-        let luachon = luaChon.toString();
+        let luachon = Number(luaChon);
         try {
-            if(luachon !== '1' && luachon !== '2') throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !==1  && luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
             return chon1();
         }
-        if(luachon === '1') {
+        if(luachon === 1) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -165,7 +165,7 @@ function note() {
         console.log(data.toString());
             console.log('Sửa thành công !');
         }
-        else if(luachon === '2') {
+        else if(luachon === 2) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -293,27 +293,27 @@ if (select === '1')
         let luaChon = prompt('Nhập lựa chọn của bạn : ');
         let luachon = Number(luaChon);
         try {
-            if(luachon !== 1 || luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !== 1 && luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
         }
-        if(luachon === '1') {
+        if(luachon === 1) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
 
             const data = fs.readFileSync(`tepghichu/${tieude}.txt`);
-        console.log(data.toString());
+        console.log(data);
             console.log('Sửa thành công !');
         }
-        else if(luachon === '2') {
+        else if(luachon === 2) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
 
             const data = fs.readFileSync(`tepghichu/${tieude}.txt`);
-        console.log(data.toString());
+        console.log(data);
             console.log('Sửa thành công !');
         }
         return note();
@@ -321,15 +321,15 @@ if (select === '1')
 
 
         let luaChon = prompt('Nhập lựa chọn của bạn : ');
-        let luachon = luaChon.toString();
+        let luachon = Number(luaChon);
         try {
-            if(luachon !== '1' || luachon !== '2') throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !==1  && luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
             return chon1();
         }
-        if(luachon === '1') {
+        if(luachon === 1) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -338,7 +338,7 @@ if (select === '1')
         console.log(data.toString());
             console.log('Sửa thành công !');
         }
-        else if(luachon === '2') {
+        else if(luachon === 2) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -348,8 +348,7 @@ if (select === '1')
             console.log('Sửa thành công !');
         }
         return note();
-        }
-        
+    }
         
     else if(select == 5)
     {
@@ -404,49 +403,45 @@ console.log('1 . Tạo ghi chú mới ')
     else if(select === '2')
     {
         var arr = [
-
+    
         ]
         console.log('Bạn vừa chọn xem các ghi chú !')
-                            fs.readdirSync(tepghichu).forEach(file => {
-                            arr.push(file);
-                    });
-                    
-                    console.log(arr);
-                    let tieude = prompt('nhập tiêu đề : ')
-                    let title = arr.includes(`${tieude}.txt`);
-                    if(title === true){
-                        const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                        console.log(data); 
-                        return note();
-                    }
-                    else {
-                        console.log('Tệp bạn nhập chưa đúng ');
-                        return chon2();
-                    }
-                    
+                fs.readdirSync(tepghichu).forEach(file => {
+                arr.push(file);
+        });
         
-            function chon2() {
-                var arr = [
-        
-                ]
-                console.log('Bạn vừa chọn xem các ghi chú !')
-                                    fs.readdirSync(tepghichu).forEach(file => {
-                                    arr.push(file);
-                            });
-                            
-                            console.log(arr);
-                            let tieude = prompt('nhập tiêu đề : ')
-                            let title = arr.includes(`${tieude}.txt`);
-                            if(title === true){
-                                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                                console.log(data); 
-                                return note();
-                            }
-                            else {
-                                console.log('Tệp bạn nhập chưa đúng ');
-                                return chon2();
-                            }
-            }
+        console.log(arr);
+        let tieude = prompt('nhập tiêu đề : ')
+        if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
+            const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                console.log(data);
+                return note();
+        }
+        else {
+            console.log('Tệp bạn nhập chưa đúng ');
+            return chon2();
+        }
+        function chon2() {
+            var arr = [
+    
+            ]
+            console.log('Bạn vừa chọn xem các ghi chú !')
+                    fs.readdirSync(tepghichu).forEach(file => {
+                    arr.push(file);
+            });
+            
+            console.log(arr);
+            let tieude = prompt('nhập tiêu đề : ')
+        if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
+            const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                console.log(data); 
+                return note();
+        }
+        else {
+            console.log('Tệp bạn nhập chưa đúng ');
+            return chon2();
+        }
+        }
     }
     else if(select === '3')
     {
@@ -476,30 +471,30 @@ console.log('1 . Tạo ghi chú mới ')
         //Xử lý người dùng nhập không đúng
         function chon1()
         {
-        let luachon = prompt('Nhập lựa chọn của bạn : ');
-        
+        let luaChon = prompt('Nhập lựa chọn của bạn : ');
+        let luachon = Number(luaChon);
         try {
-            if(luachon !== '1' && luachon !== '2') throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !== 1 && luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
         }
-        if(luachon === '1') {
+        if(luachon === 1) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
 
             const data = fs.readFileSync(`tepghichu/${tieude}.txt`);
-        console.log(data.toString());
+        console.log(data);
             console.log('Sửa thành công !');
         }
-        else if(luachon === '2') {
+        else if(luachon === 2) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
 
             const data = fs.readFileSync(`tepghichu/${tieude}.txt`);
-        console.log(data.toString());
+        console.log(data);
             console.log('Sửa thành công !');
         }
         return note();
@@ -507,15 +502,15 @@ console.log('1 . Tạo ghi chú mới ')
 
 
         let luaChon = prompt('Nhập lựa chọn của bạn : ');
-        let luachon = luaChon.toString();
+        let luachon = Number(luaChon);
         try {
-            if(luachon !== '1' && luachon !== '2') throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !==1  && luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
             return chon1();
         }
-        if(luachon === '1') {
+        if(luachon === 1) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -524,7 +519,7 @@ console.log('1 . Tạo ghi chú mới ')
         console.log(data.toString());
             console.log('Sửa thành công !');
         }
-        else if(luachon === '2') {
+        else if(luachon === 2) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -652,27 +647,27 @@ if (select === '1')
         let luaChon = prompt('Nhập lựa chọn của bạn : ');
         let luachon = Number(luaChon);
         try {
-            if(luachon !== 1 || luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !== 1 && luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
         }
-        if(luachon === '1') {
+        if(luachon === 1) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
 
             const data = fs.readFileSync(`tepghichu/${tieude}.txt`);
-        console.log(data.toString());
+        console.log(data);
             console.log('Sửa thành công !');
         }
-        else if(luachon === '2') {
+        else if(luachon === 2) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
 
             const data = fs.readFileSync(`tepghichu/${tieude}.txt`);
-        console.log(data.toString());
+        console.log(data);
             console.log('Sửa thành công !');
         }
         return note();
@@ -680,15 +675,15 @@ if (select === '1')
 
 
         let luaChon = prompt('Nhập lựa chọn của bạn : ');
-        let luachon = luaChon.toString();
+        let luachon = Number(luaChon);
         try {
-            if(luachon !== '1' || luachon !== '2') throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
+            if(luachon !==1  && luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
         }
         catch(err) {
             console.log(err);
             return chon1();
         }
-        if(luachon === '1') {
+        if(luachon === 1) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -697,7 +692,7 @@ if (select === '1')
         console.log(data.toString());
             console.log('Sửa thành công !');
         }
-        else if(luachon === '2') {
+        else if(luachon === 2) {
             let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
             let noiDung = noidung.toString()+'\n';
             fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
@@ -716,3 +711,4 @@ if (select === '1')
             return console.log(`Bạn đã thoát chương trình thành công ! `);
         });
     }
+
