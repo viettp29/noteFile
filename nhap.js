@@ -6,38 +6,42 @@ var prompt = require('prompt-sync')({
 });
 
 
-function chon() {
-    let select = prompt('nhap lua chọn : ')
-    let Select = Number(select);
-    try {
-        if (Select < 1)
-        throw 'sai roi';
-        if (Select > 2)
-        throw 'sai rồi ';
-        if (isString(Select) === true)
-        throw 'sai rồi';
-    } catch (err) {
-        console.log(err);
-    }
-}
+    console.log('so 1 ');
+    console.log('so 2 ');
 
-let select = prompt('nhap lua chọn : ')
-    let Select = Number(select);
+
+    function chon() {
+        let Select = prompt('nhap lua chọn : ')
+    let select = Select.toString();
+        try {
+            if (select !== "1" && select !== "2")
+            throw 'sai rồi !';
+        } catch (err) {
+            console.log(err);
+            return chon();
+        }
+        if(select === '1') {
+            console.log('đúng rồi !');
+        }
+        else if(select === '2') {
+            console.log('đúng rồi !');
+        }
+    }
+
+
+    let select = prompt('nhap lua chọn : ')
     try {
-        if (Select < 1)
-        throw 'sai roi';
-        if (Select > 2)
-        throw 'sai rồi ';
-        if (isString(Select) === true)
-        throw 'sai rồi';
+        if (select !== '1'  && select !== '2')
+        throw 'sai rồi !';
     } catch (err) {
         console.log(err);
         return chon();
     }
-    if(Select === 1) {
-        console.log('dung rồi');
+    
+    if(select === '1') {
+        console.log('đúng rồi !');
     }
-    else if(Select === 2) {
-        console.log('đúng rồi ');
+    else if(select === '2') {
+        console.log('đúng rồi !');
     }
     
