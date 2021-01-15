@@ -102,19 +102,29 @@ function note() {
     }
     else if(select === '3')
     {
-        console.log('Bạn vừa chọn xóa ghi chú !')
+        var arr = [];
+console.log('Bạn vừa chọn xóa ghi chú !')
+                    fs.readdirSync(tepghichu).forEach(file => {
+                    arr.push(file);
+            });
+            const leng = arr.length;
+            if(leng !== 0){
+                console.log(arr);
         let tieuDe = prompt('Nhập phần tiêu đề của ghi chú bạn muốn xóa : ')
-        let tieude = tieuDe.toString();
         fs.unlink(`tepghichu/${tieuDe}.txt`, (err) => {
         if (err) {
         console.error(err)
         return
         }
-
-    //file removed
     })
         console.log('Xóa thành công !');
         return note();
+            }
+            else {
+                console.log('--Bạn chưa có ghi chú !');
+                console.log('--Hãy tạo ghi chú mới !');
+                return note();
+            }
     }
 
 
@@ -285,19 +295,29 @@ if (select === '1')
 
     else if(select === '3')
     {
-        console.log('Bạn vừa chọn xóa ghi chú !')
+        var arr = [];
+console.log('Bạn vừa chọn xóa ghi chú !')
+                    fs.readdirSync(tepghichu).forEach(file => {
+                    arr.push(file);
+            });
+            const leng = arr.length;
+            if(leng !== 0){
+                console.log(arr);
         let tieuDe = prompt('Nhập phần tiêu đề của ghi chú bạn muốn xóa : ')
-        let tieude = tieuDe.toString();
         fs.unlink(`tepghichu/${tieuDe}.txt`, (err) => {
         if (err) {
         console.error(err)
         return
         }
-
-    //file removed
     })
         console.log('Xóa thành công !');
         return note();
+            }
+            else {
+                console.log('--Bạn chưa có ghi chú !');
+                console.log('--Hãy tạo ghi chú mới !');
+                return note();
+            }
     }
 
 
@@ -480,19 +500,29 @@ console.log('1 . Tạo ghi chú mới ')
     }
     else if(select === '3')
     {
-        console.log('Bạn vừa chọn xóa ghi chú !')
+        var arr = [];
+console.log('Bạn vừa chọn xóa ghi chú !')
+                    fs.readdirSync(tepghichu).forEach(file => {
+                    arr.push(file);
+            });
+            const leng = arr.length;
+            if(leng !== 0){
+                console.log(arr);
         let tieuDe = prompt('Nhập phần tiêu đề của ghi chú bạn muốn xóa : ')
-        let tieude = tieuDe.toString();
         fs.unlink(`tepghichu/${tieuDe}.txt`, (err) => {
         if (err) {
         console.error(err)
         return
         }
-
-    //file removed
     })
         console.log('Xóa thành công !');
         return note();
+            }
+            else {
+                console.log('--Bạn chưa có ghi chú !');
+                console.log('--Hãy tạo ghi chú mới !');
+                return note();
+            }
     }
 
 
@@ -663,19 +693,29 @@ if (select === '1')
 
     else if(select === '3')
     {
-        console.log('Bạn vừa chọn xóa ghi chú !')
+        var arr = [];
+console.log('Bạn vừa chọn xóa ghi chú !')
+                    fs.readdirSync(tepghichu).forEach(file => {
+                    arr.push(file);
+            });
+            const leng = arr.length;
+            if(leng !== 0){
+                console.log(arr);
         let tieuDe = prompt('Nhập phần tiêu đề của ghi chú bạn muốn xóa : ')
-        let tieude = tieuDe.toString();
         fs.unlink(`tepghichu/${tieuDe}.txt`, (err) => {
         if (err) {
         console.error(err)
         return
         }
-
-    //file removed
     })
         console.log('Xóa thành công !');
         return note();
+            }
+            else {
+                console.log('--Bạn chưa có ghi chú !');
+                console.log('--Hãy tạo ghi chú mới !');
+                return note();
+            }
     }
 
 
