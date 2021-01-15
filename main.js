@@ -6,7 +6,6 @@ var prompt = require('prompt-sync')({
 });
 
 
-
 function note() {
 
     console.log('1 . Tạo ghi chú mới ')
@@ -55,38 +54,43 @@ function note() {
                 fs.readdirSync(tepghichu).forEach(file => {
                 arr.push(file);
         });
-        
-        console.log(arr);
-        let tieude = prompt('nhập tiêu đề : ')
-        if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
-            const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                console.log(data);
-                return note();
-        }
-        else {
-            console.log('Tệp bạn nhập chưa đúng ');
-            return chon2();
-        }
-        function chon2() {
-            var arr = [
-    
-            ]
-            console.log('Bạn vừa chọn xem các ghi chú !')
-                    fs.readdirSync(tepghichu).forEach(file => {
-                    arr.push(file);
-            });
-            
+        let leng = arr.length;
+        if(leng === 0){
+            console.log('Bạn chưa có ghi chú ! Hãy tạo ghi chú mới :)) ');
+            return note();
+        }else{
             console.log(arr);
             let tieude = prompt('nhập tiêu đề : ')
-        if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
-            const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                console.log(data); 
-                return note();
-        }
-        else {
-            console.log('Tệp bạn nhập chưa đúng ');
-            return chon2();
-        }
+            if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
+                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                    console.log(data);
+                    return note();
+            }
+            else {
+                console.log('Tệp bạn nhập chưa đúng ');
+                return chon2();
+            }
+            function chon2() {
+                var arr = [
+        
+                ]
+                console.log('Bạn vừa chọn xem các ghi chú !')
+                        fs.readdirSync(tepghichu).forEach(file => {
+                        arr.push(file);
+                });
+                
+                console.log(arr);
+                let tieude = prompt('nhập tiêu đề : ')
+            if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
+                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                    console.log(data); 
+                    return note();
+            }
+            else {
+                console.log('Tệp bạn nhập chưa đúng ');
+                return chon2();
+            }
+            }
         }
     }
     else if(select === '3')
@@ -224,43 +228,44 @@ if (select === '1')
                             fs.readdirSync(tepghichu).forEach(file => {
                             arr.push(file);
                     });
-                    
-                    console.log(arr);
-                    let tieude = prompt('nhập tiêu đề : ')
-                    let title = arr.includes(`${tieude}.txt`);
-                    if(title === true){
-                        const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                        console.log(data); 
-                        return note();
-                    }
-                    else {
-                        console.log('Tệp bạn nhập chưa đúng ');
-                        return chon2();
-                    }
-                    
-        
+                    let leng = arr.length;
+        if(leng === 0){
+            console.log('Bạn chưa có ghi chú ! Hãy tạo ghi chú mới :)) ');
+            return note();
+        }else{
+            console.log(arr);
+            let tieude = prompt('nhập tiêu đề : ')
+            if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
+                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                    console.log(data);
+                    return note();
+            }
+            else {
+                console.log('Tệp bạn nhập chưa đúng ');
+                return chon2();
+            }
             function chon2() {
                 var arr = [
         
                 ]
                 console.log('Bạn vừa chọn xem các ghi chú !')
-                                    fs.readdirSync(tepghichu).forEach(file => {
-                                    arr.push(file);
-                            });
-                            
-                            console.log(arr);
-                            let tieude = prompt('nhập tiêu đề : ')
-                            let title = arr.includes(`${tieude}.txt`);
-                            if(title === true){
-                                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                                console.log(data); 
-                                return note();
-                            }
-                            else {
-                                console.log('Tệp bạn nhập chưa đúng ');
-                                return chon2();
-                            }
+                        fs.readdirSync(tepghichu).forEach(file => {
+                        arr.push(file);
+                });
+                
+                console.log(arr);
+                let tieude = prompt('nhập tiêu đề : ')
+            if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
+                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                    console.log(data); 
+                    return note();
             }
+            else {
+                console.log('Tệp bạn nhập chưa đúng ');
+                return chon2();
+            }
+            }
+        }
     }
 
 
@@ -413,55 +418,44 @@ console.log('1 . Tạo ghi chú mới ')
                 fs.readdirSync(tepghichu).forEach(file => {
                 arr.push(file);
         });
-        
-        console.log(arr);
-        let tieude = prompt('nhập tiêu đề : ')
-        if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
-            const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                console.log(data);
-                return note();
-        }
-        else {
-            console.log('Tệp bạn nhập chưa đúng ');
-            return chon2();
-        }
-        function chon2() {
-            var arr = [
-    
-            ]
-            console.log('Bạn vừa chọn xem các ghi chú !')
-                    fs.readdirSync(tepghichu).forEach(file => {
-                    arr.push(file);
-            });
-            
+        let leng = arr.length;
+        if(leng === 0){
+            console.log('Bạn chưa có ghi chú ! Hãy tạo ghi chú mới :)) ');
+            return note();
+        }else{
             console.log(arr);
             let tieude = prompt('nhập tiêu đề : ')
-        if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
-            const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                console.log(data); 
-                return note();
+            if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
+                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                    console.log(data);
+                    return note();
+            }
+            else {
+                console.log('Tệp bạn nhập chưa đúng ');
+                return chon2();
+            }
+            function chon2() {
+                var arr = [
+        
+                ]
+                console.log('Bạn vừa chọn xem các ghi chú !')
+                        fs.readdirSync(tepghichu).forEach(file => {
+                        arr.push(file);
+                });
+                
+                console.log(arr);
+                let tieude = prompt('nhập tiêu đề : ')
+            if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
+                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                    console.log(data); 
+                    return note();
+            }
+            else {
+                console.log('Tệp bạn nhập chưa đúng ');
+                return chon2();
+            }
+            }
         }
-        else {
-            console.log('Tệp bạn nhập chưa đúng ');
-            return chon2();
-        }
-        }
-    }
-    else if(select === '3')
-    {
-        console.log('Bạn vừa chọn xóa ghi chú !')
-        let tieuDe = prompt('Nhập phần tiêu đề của ghi chú bạn muốn xóa : ')
-        let tieude = tieuDe.toString();
-        fs.unlink(`tepghichu/${tieuDe}.txt`, (err) => {
-        if (err) {
-        console.error(err)
-        return
-        }
-
-    //file removed
-    })
-        console.log('Xóa thành công !');
-        return note();
     }
 
 
@@ -582,43 +576,44 @@ if (select === '1')
                             fs.readdirSync(tepghichu).forEach(file => {
                             arr.push(file);
                     });
-                    
-                    console.log(arr);
-                    let tieude = prompt('nhập tiêu đề : ')
-                    let title = arr.includes(`${tieude}.txt`);
-                    if(title === true){
-                        const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                        console.log(data); 
-                        return note();
-                    }
-                    else {
-                        console.log('Tệp bạn nhập chưa đúng ');
-                        return chon2();
-                    }
-                    
-        
+                    let leng = arr.length;
+        if(leng === 0){
+            console.log('Bạn chưa có ghi chú ! Hãy tạo ghi chú mới :)) ');
+            return note();
+        }else{
+            console.log(arr);
+            let tieude = prompt('nhập tiêu đề : ')
+            if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
+                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                    console.log(data);
+                    return note();
+            }
+            else {
+                console.log('Tệp bạn nhập chưa đúng ');
+                return chon2();
+            }
             function chon2() {
                 var arr = [
         
                 ]
                 console.log('Bạn vừa chọn xem các ghi chú !')
-                                    fs.readdirSync(tepghichu).forEach(file => {
-                                    arr.push(file);
-                            });
-                            
-                            console.log(arr);
-                            let tieude = prompt('nhập tiêu đề : ')
-                            let title = arr.includes(`${tieude}.txt`);
-                            if(title === true){
-                                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                                console.log(data); 
-                                return note();
-                            }
-                            else {
-                                console.log('Tệp bạn nhập chưa đúng ');
-                                return chon2();
-                            }
+                        fs.readdirSync(tepghichu).forEach(file => {
+                        arr.push(file);
+                });
+                
+                console.log(arr);
+                let tieude = prompt('nhập tiêu đề : ')
+            if(typeof arr[`tepghichu/${tieude}.txt`] !== 'undefined') {
+                const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                    console.log(data); 
+                    return note();
             }
+            else {
+                console.log('Tệp bạn nhập chưa đúng ');
+                return chon2();
+            }
+            }
+        }
     }
 
 
@@ -713,7 +708,7 @@ if (select === '1')
             }
     else if(select === '5')
     {
-        process.on('exit', function(code) {  
+        process.on('exit', function() {  
             return console.log(`Bạn đã thoát chương trình thành công ! `);
         });
     }
