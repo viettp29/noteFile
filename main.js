@@ -6,7 +6,6 @@ var prompt = require('prompt-sync')({
 
 
 
-    //                  HÀM NÀY GIỐNG HỆT MAIN ĐC GỌI LẠI TRONG MAIN ĐỂ TẠO VÒNG LẶP
 function note() {
 
     console.log('1 . Tạo ghi chú mới ')
@@ -16,8 +15,6 @@ function note() {
     console.log('5 . Thoát ')
     /*
     Xử lý bắt hết tất cả các trường hợp mà user nhập vào:
-    - Nhập vào String
-    - Nhập vào Char
     */
 
     function chon() {
