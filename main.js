@@ -5,18 +5,14 @@ var prompt = require('prompt-sync')({
 });
 
 
-
 function note() {
-
     console.log('1 . Tạo ghi chú mới ')
     console.log('2 . Xem các ghi chú ')
     console.log('3 . Xóa một ghi chú ')
     console.log('4 . Sửa ghi chú ')
     console.log('5 . Thoát ')
-    /*
-    Xử lý bắt hết tất cả các trường hợp mà user nhập vào:
-    */
-
+    
+    //Xử lý bắt hết tất cả các trường hợp mà user nhập vào:
     function chon() {
         let select = prompt('Mời bạn nhập lựa chọn : ');
     
