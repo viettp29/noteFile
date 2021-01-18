@@ -45,52 +45,33 @@ function note() {
 
     else if(select === '2')
     {
-        var arr = [
-
-        ]
-        console.log('Bạn vừa chọn xem các ghi chú !')
+        var arr = [];
                             fs.readdirSync(tepghichu).forEach(file => {
                             arr.push(file);
                     });
-                    
                     const leng = arr.length;
-                    if(leng !== 0){
-                        console.log(arr);
-                        let tieude = prompt('nhập tiêu đề : ')
-                        let title = arr.includes(`${tieude}.txt`);
-                        if(title === true){
-                            const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                            console.log(data); 
-                            return note();
+            if(leng !== 0)
+            {
+                        function chon2() {
+                            var arr = [];
+                            console.log('Bạn vừa chọn xem các ghi chú !')
+                                                fs.readdirSync(tepghichu).forEach(file => {
+                                                arr.push(file);
+                                                console.log(file);
+                                        });
+                                        let tieude = prompt('nhập tiêu đề : ');
+                                        let title = arr.includes(`${tieude}.txt`);
+                                        if(title === true){
+                                            const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
+                                            console.log(data); 
+                                            return note();
+                                        }
+                                        else {
+                                            console.log('Tiêu đề bạn nhập chưa đúng ');
+                                            return chon2();
+                                        }
                         }
-                        else {
-                            console.log('Tệp bạn nhập chưa đúng ');
-                            return chon2();
-                        }
-                        
-            
-                function chon2() {
-                    var arr = [
-            
-                    ]
-                    console.log('Bạn vừa chọn xem các ghi chú !')
-                                        fs.readdirSync(tepghichu).forEach(file => {
-                                        arr.push(file);
-                                });
-                                
-                                console.log(arr);
-                                let tieude = prompt('nhập tiêu đề : ')
-                                let title = arr.includes(`${tieude}.txt`);
-                                if(title === true){
-                                    const data = fs.readFileSync(`tepghichu/${tieude}.txt`, "utf8");
-                                    console.log(data); 
-                                    return note();
-                                }
-                                else {
-                                    console.log('Tệp bạn nhập chưa đúng ');
-                                    return chon2();
-                                }
-                }
+                        return chon2();
                     }
                     else {
                         console.log('--Bạn chưa có ghi chú !');
@@ -104,10 +85,10 @@ function note() {
 console.log('Bạn vừa chọn xóa ghi chú !')
                     fs.readdirSync(tepghichu).forEach(file => {
                     arr.push(file);
+                    console.log(file);
             });
             const leng = arr.length;
             if(leng !== 0){
-                console.log(arr);
         let tieuDe = prompt('Nhập phần tiêu đề của ghi chú bạn muốn xóa : ')
         fs.unlink(`tepghichu/${tieuDe}.txt`, (err) => {
         if (err) {
@@ -132,7 +113,6 @@ console.log('Bạn vừa chọn xóa ghi chú !')
                 console.log('Bạn đã chọn cập nhập ghi chú ');
                 console.log('1 . Cập nhập mới toàn bộ nội dung của ghi chú !');
                 console.log('2 . Thêm nối tiếp nội dung vào ghi chú !');
-        
                 //Xử lý người dùng nhập không đúng
                 function chon1()
                 {
@@ -166,39 +146,8 @@ console.log('Bạn vừa chọn xóa ghi chú !')
                 }
                 return note();
                 }
-        
-        
-                let luaChon = prompt('Nhập lựa chọn của bạn : ');
-                let luachon = Number(luaChon);
-                try {
-                    if(luachon !==1  && luachon !== 2) throw 'Lựa chọn nhập vào phải là 1 hoặc 2 ';
-                }
-                catch(err) {
-                    console.log(err);
-                    return chon1();
-                }
-                if(luachon === 1) {
-                    let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
-                    let noiDung = noidung.toString()+'\n';
-                    fs.writeFileSync(`tepghichu/${tieude}.txt`,noiDung);
-        
-                    const data = fs.readFileSync(`tepghichu/${tieude}.txt`);
-                console.log(data.toString());
-                    console.log('Sửa thành công !');
-                }
-                else if(luachon === 2) {
-                    let noidung = prompt('Nhập nội dung cho tiêu đề được sửa : ')
-                    let noiDung = noidung.toString()+'\n';
-                    fs.appendFileSync(`tepghichu/${tieude}.txt`,noiDung);
-        
-                    const data = fs.readFileSync(`tepghichu/${tieude}.txt`);
-                console.log(data.toString());
-                    console.log('Sửa thành công !');
-                }
-                return note();
+                return chon1();
             }
-        
-        
     else if(select === '5')
     {
         process.on('exit', function() {  
@@ -208,6 +157,5 @@ console.log('Bạn vừa chọn xóa ghi chú !')
     }
 return chon();
 }
-
 return note();
 
