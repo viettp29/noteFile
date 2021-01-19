@@ -84,19 +84,24 @@ console.log('--Hãy tạo ghi chú mới !');
             const leng = arr.length;
             if(leng !== 0) {
                 console.log('Bạn vừa chọn xóa ghi chú ');
+                function chon2() {
                 fs.readdirSync(tepghichu).forEach(file => {
-                    arr.push(file);
                     console.log(file);
             });
         let tieuDe = prompt('Nhập phần tiêu đề của ghi chú bạn muốn xóa : ')
-        fs.unlink(`tepghichu/${tieuDe}.txt`, (err) => {
-        if (err) {
-        console.error(err)
-        return
-        }
-        })
-        console.log('Xóa thành công !');
+        let title1 = arr.includes(`${tieuDe}.txt`);
+        if (title1 === true) {
+            fs.unlink(`tepghichu/${tieuDe}.txt`, (err) => {
+                if (err) throw err;
+            })
+            console.log('Xóa thành công !');
         return note();
+        } else {
+            console.log('Ghi chú bạn muốn xóa không tồn tại ! ');
+            return chon2();
+        }
+            }
+            return chon2();
             }
             else {
                 console.log('--Bạn chưa có ghi chú !');
